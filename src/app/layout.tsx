@@ -2,10 +2,14 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Layout from "./Layout/Layout";
+import { ColorModeContext, useMode } from "../../public/mui/useMode";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
+  const [theme, colorMode] = useMode();
+
   return (
     <html lang="en">
       <head>
@@ -18,8 +22,13 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
         <title>Admin</title>
       </head>
       <body className={inter.className} suppressHydrationWarning={true}>
-        <Layout />
-        {children}
+        <ColorModeContext.Provider value={colorMode}>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Layout />
+            {children}
+          </ThemeProvider>
+        </ColorModeContext.Provider>
       </body>
     </html>
   );

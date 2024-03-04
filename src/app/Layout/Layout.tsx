@@ -4,8 +4,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import Header from './Header';
-import SideBar from './Sidebar';
 import { DrawerHeader } from './muiLayoutStyle';
+import SideBar from './SideBar';
 
 function Layout() {
 

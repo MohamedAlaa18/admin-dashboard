@@ -13,7 +13,7 @@ const ColorModeContext = createContext<ColorModeContextType | undefined>(
 
 export const useMode = (): [Theme, ColorModeContextType] => {
   // Initialize state without localStorage
-  const [mode, setMode] = useState<"light" | "dark">("light");
+  const [mode, setMode] = useState<"light" | "dark">("dark");
 
   // Use useEffect to update the state with localStorage value after component mounts
   useEffect(() => {
