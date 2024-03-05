@@ -21,37 +21,37 @@ export const navigationItems1: NavigationItem[] = [
         title: "Dashboard", icon: HomeOutlinedIcon, href: "/"
     },
     {
-        title: "Manage Team", icon: PeopleOutlinedIcon, href: "/team"
+        title: "Manage Team", icon: PeopleOutlinedIcon, href: "/Team"
     },
     {
-        title: "Contacts Information", icon: ContactsOutlinedIcon, href: "/contacts",
+        title: "Contacts Information", icon: ContactsOutlinedIcon, href: "/Contacts",
     },
     {
-        title: "Invoices Balances", icon: ReceiptOutlinedIcon, href: "/invoices",
+        title: "Invoices Balances", icon: ReceiptOutlinedIcon, href: "/Invoices",
     },
 ]
 
 export const navigationItems2: NavigationItem[] = [
     {
-        title: "Profile Form", icon: PersonOutlinedIcon, href: "/form"
+        title: "Profile Form", icon: PersonOutlinedIcon, href: "/Form"
     },
     {
-        title: "Calendar", icon: CalendarTodayOutlinedIcon, href: "/calendar"
+        title: "Calendar", icon: CalendarTodayOutlinedIcon, href: "/Calendar"
     },
     {
-        title: "FAQ Page", icon: HelpOutlineOutlinedIcon, href: "/faq",
+        title: "FAQ Page", icon: HelpOutlineOutlinedIcon, href: "/Faq",
     },
 ]
 
 export const navigationItems3: NavigationItem[] = [
     {
-        title: "Bar Chart", icon: BarChartOutlinedIcon, href: "/bar"
+        title: "Bar Chart", icon: BarChartOutlinedIcon, href: "/Bar"
     },
     {
-        title: "Pie Chart", icon: PieChartOutlineOutlinedIcon, href: "/pie"
+        title: "Pie Chart", icon: PieChartOutlineOutlinedIcon, href: "/Pie"
     },
     {
-        title: "Line Chart", icon: TimelineOutlinedIcon, href: "/line"
+        title: "Line Chart", icon: TimelineOutlinedIcon, href: "/Line"
     },
-    { title: "Geography Chart", icon: MapOutlinedIcon, href: "/geography" },
+    { title: "Geography Chart", icon: MapOutlinedIcon, href: "/Geography" },
 ]

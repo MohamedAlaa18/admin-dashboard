@@ -9,7 +9,7 @@ import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import { useContext, useState } from 'react';
-import { ColorModeContext } from '../../../public/mui/useMode';
+import { ColorModeContext } from '../../public/mui/useMode';
 
 interface Props {
     open?: boolean;

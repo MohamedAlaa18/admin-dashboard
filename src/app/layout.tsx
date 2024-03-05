@@ -1,14 +1,23 @@
 "use client"
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Layout from "./Layout/Layout";
 import { ColorModeContext, useMode } from "../../public/mui/useMode";
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { Box, CssBaseline, ThemeProvider, Typography } from "@mui/material";
+import { useState } from "react";
+import { DrawerHeader } from "../components/muiLayoutStyle";
+import Header from "../components/Header";
+import SideBar from "../components/SideBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   const [theme, colorMode] = useMode();
+
+
+  const [open, setOpen] = useState(false);
+
+  const handleDrawerOpen = () => setOpen(true);
+  const handleDrawerClose = () => setOpen(false);
 
   return (
     <html lang="en">
@@ -25,8 +34,17 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
         <ColorModeContext.Provider value={colorMode}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
-            <Layout />
-            {children}
+            <Box sx={{ display: 'flex' }}>
+
+              <Header open={open} handleDrawerOpen={handleDrawerOpen} />
+              <SideBar open={open} handleDrawerClose={handleDrawerClose} />
+
+              <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+                <DrawerHeader />
+                {children}
+              </Box>
+
+            </Box>
           </ThemeProvider>
         </ColorModeContext.Provider>
       </body>
