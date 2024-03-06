@@ -6,10 +6,10 @@ import { AdminPanelSettingsOutlined, LockOpenOutlined, SecurityOutlined } from "
 function Team() {
     const theme = useTheme();
     const columns: GridColDef[] = [
-        { field: 'id', headerName: 'ID', width: 50, align: "center", headerAlign: "center" },
-        { field: 'name', headerName: 'Name', width: 150, align: "center", headerAlign: "center" },
+        { field: 'id', headerName: 'ID', flex: 0.25, align: "center", headerAlign: "center" },
+        { field: 'name', headerName: 'Name', flex: 0.5, align: "center", headerAlign: "center" },
         { field: 'email', headerName: 'Email', flex: 1, align: "center", headerAlign: "center" },
-        { field: 'age', headerName: 'Age', width: 50, align: "center", headerAlign: "center" },
+        { field: 'age', headerName: 'Age', flex: 0.25, align: "center", headerAlign: "center" },
         { field: 'phone', headerName: 'Phone', flex: 1, align: "center", headerAlign: "center" },
         {
             field: 'access', headerName: 'Access', flex: 1, align: "center", headerAlign: "center",
