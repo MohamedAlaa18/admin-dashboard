@@ -1,15 +1,18 @@
 "use client"
 import { ResponsiveBar } from '@nivo/bar'
 import { data } from './data'
-import { Box } from '@mui/material'
-import { theme } from './theme'
+import { Box, useTheme } from '@mui/material'
+import { customizedNivoTheme } from './theme'
 
 function Bar() {
+    const theme = useTheme();
+    const nivoTheme = customizedNivoTheme(theme);
+
     return (
         <Box sx={{ height: "75dvh" }}>
             <ResponsiveBar
                 data={data}
-                theme={theme}
+                theme={nivoTheme}
                 keys={["Spain", "France", "Germany"]}
                 indexBy="year"
                 margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
