@@ -6,13 +6,12 @@ import { customizedNivoTheme } from './theme'
 
 function Bar() {
     const theme = useTheme();
-    const nivoTheme = customizedNivoTheme(theme);
 
     return (
         <Box sx={{ height: "75dvh" }}>
             <ResponsiveBar
                 data={data}
-                theme={nivoTheme}
+                theme={customizedNivoTheme(theme)}
                 keys={["Spain", "France", "Germany"]}
                 indexBy="year"
                 margin={{ top: 50, right: 130, bottom: 50, left: 60 }}

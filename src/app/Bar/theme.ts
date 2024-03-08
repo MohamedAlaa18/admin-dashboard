@@ -38,7 +38,7 @@ export const customizedNivoTheme = (muiTheme: Theme) => ({
     grid: {
         line: {
             stroke: muiTheme.palette.divider,
-            strokeWidth: 1
+            strokeWidth: 0
         }
     },
     legends: {

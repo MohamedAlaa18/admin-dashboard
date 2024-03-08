@@ -6,13 +6,12 @@ import { data } from './data';
 
 function Pie() {
     const theme = useTheme();
-    const nivoTheme = customizedNivoTheme(theme);
 
     return (
         <Box sx={{ height: "75dvh" }}>
             <ResponsivePie
                 data={data}
-                theme={nivoTheme}
+                theme={customizedNivoTheme(theme)}
                 margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
                 innerRadius={0.5}
                 padAngle={0.7}
