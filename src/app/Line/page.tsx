@@ -4,11 +4,13 @@ import { ResponsiveLine } from '@nivo/line'
 import { customizedNivoTheme } from 'app/Bar/theme'
 import { data } from './data';
 
-
-function Line() {
+type props = {
+    isDashboard: boolean
+}
+function Line({ isDashboard }: props) {
     const theme = useTheme();
     return (
-        <Box height={"75dvh"}>
+        <Box height={isDashboard ? "280px" : "75dvh"}>
             <ResponsiveLine
                 data={data}
                 theme={customizedNivoTheme(theme)}
@@ -29,7 +31,7 @@ function Line() {
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: 0,
-                    legend: 'transportation',
+                    legend: isDashboard ? null :'transportation',
                     legendOffset: 36,
                     legendPosition: 'middle',
                     truncateTickAt: 0
@@ -38,7 +40,7 @@ function Line() {
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: 0,
-                    legend: 'count',
+                    legend: isDashboard ? null : 'count',
                     legendOffset: -40,
                     legendPosition: 'middle',
                     truncateTickAt: 0

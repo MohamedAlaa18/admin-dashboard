@@ -1,11 +1,15 @@
 import Cards from "./Cards"
+import Section2 from "./Section2"
 
 
 function Dashboard() {
 
 
     return (
-        <Cards />
+        <>
+            <Cards />
+            <Section2 />
+        </>
     )
 }
 
