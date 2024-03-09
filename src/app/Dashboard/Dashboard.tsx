@@ -1,5 +1,6 @@
 import Cards from "./Cards"
 import Section2 from "./Section2"
+import Section3 from "./Section3"
 
 
 function Dashboard() {
@@ -9,6 +10,7 @@ function Dashboard() {
         <>
             <Cards />
             <Section2 />
+            <Section3 />
         </>
     )
 }

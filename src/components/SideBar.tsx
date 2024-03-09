@@ -12,7 +12,7 @@ import { useTheme } from '@mui/material/styles';
 import { Drawer, DrawerHeader } from './muiLayoutStyle';
 import { navigationItems1, navigationItems2, navigationItems3 } from './navigationData';
 import Link from 'next/link';
-import { Avatar, Typography } from '@mui/material';
+import { Avatar, Tooltip, Typography } from '@mui/material';
 import { usePathname } from 'next/navigation';
 import { grey } from "@mui/material/colors";
 
@@ -49,28 +49,30 @@ function SideBar({ open, handleDrawerClose }: Props) {
                 {navigationItems1.map((item, index) => (
                     <ListItem key={index} disablePadding sx={{ display: 'block' }}>
                         <Link href={item.href} style={{ all: "unset" }}>
-                            <ListItemButton
-                                sx={{
-                                    minHeight: 48,
-                                    justifyContent: open ? 'initial' : 'center',
-                                    backgroundColor: pathName === item.href ? theme.palette.mode === "dark" ? grey[800] : grey[300] : undefined,
-                                    px: 2.5,
-                                }}
-                            >
-
-                                <ListItemIcon
+                            <Tooltip title={open ? undefined : item.title} placement='left'>
+                                <ListItemButton
                                     sx={{
-                                        minWidth: 0,
-                                        mr: open ? 3 : 'auto',
-                                        justifyContent: 'center',
+                                        minHeight: 48,
+                                        justifyContent: open ? 'initial' : 'center',
+                                        backgroundColor: pathName === item.href ? theme.palette.mode === "dark" ? grey[800] : grey[300] : undefined,
+                                        px: 2.5,
                                     }}
                                 >
-                                    <item.icon />
-                                </ListItemIcon>
 
-                                <ListItemText primary={item.title} sx={{ opacity: open ? 1 : 0 }} />
+                                    <ListItemIcon
+                                        sx={{
+                                            minWidth: 0,
+                                            mr: open ? 3 : 'auto',
+                                            justifyContent: 'center',
+                                        }}
+                                    >
+                                        <item.icon />
+                                    </ListItemIcon>
 
-                            </ListItemButton>
+                                    <ListItemText primary={item.title} sx={{ opacity: open ? 1 : 0 }} />
+
+                                </ListItemButton>
+                            </Tooltip>
                         </Link>
                     </ListItem>
                 ))}
@@ -82,28 +84,30 @@ function SideBar({ open, handleDrawerClose }: Props) {
                 {navigationItems2.map((item, index) => (
                     <ListItem key={index} disablePadding sx={{ display: 'block' }}>
                         <Link href={item.href} style={{ all: "unset" }}>
-                            <ListItemButton
-                                sx={{
-                                    minHeight: 48,
-                                    justifyContent: open ? 'initial' : 'center',
-                                    px: 2.5,
-                                    backgroundColor: pathName === item.href ? theme.palette.mode === "dark" ? grey[800] : grey[300] : undefined,
-                                }}
-                            >
-
-                                <ListItemIcon
+                            <Tooltip title={open ? undefined : item.title} placement='left'>
+                                <ListItemButton
                                     sx={{
-                                        minWidth: 0,
-                                        mr: open ? 3 : 'auto',
-                                        justifyContent: 'center',
+                                        minHeight: 48,
+                                        justifyContent: open ? 'initial' : 'center',
+                                        px: 2.5,
+                                        backgroundColor: pathName === item.href ? theme.palette.mode === "dark" ? grey[800] : grey[300] : undefined,
                                     }}
                                 >
-                                    <item.icon />
-                                </ListItemIcon>
 
-                                <ListItemText primary={item.title} sx={{ opacity: open ? 1 : 0 }} />
+                                    <ListItemIcon
+                                        sx={{
+                                            minWidth: 0,
+                                            mr: open ? 3 : 'auto',
+                                            justifyContent: 'center',
+                                        }}
+                                    >
+                                        <item.icon />
+                                    </ListItemIcon>
 
-                            </ListItemButton>
+                                    <ListItemText primary={item.title} sx={{ opacity: open ? 1 : 0 }} />
+
+                                </ListItemButton>
+                            </Tooltip>
                         </Link>
                     </ListItem>
                 ))}
@@ -115,28 +119,30 @@ function SideBar({ open, handleDrawerClose }: Props) {
                 {navigationItems3.map((item, index) => (
                     <ListItem key={index} disablePadding sx={{ display: 'block' }}>
                         <Link href={item.href} style={{ all: "unset" }}>
-                            <ListItemButton
-                                sx={{
-                                    minHeight: 48,
-                                    justifyContent: open ? 'initial' : 'center',
-                                    backgroundColor: pathName === item.href ? theme.palette.mode === "dark" ? grey[800] : grey[300] : undefined,
-                                    px: 2.5,
-                                }}
-                            >
-
-                                <ListItemIcon
+                            <Tooltip title={open ? undefined : item.title} placement='left'>
+                                <ListItemButton
                                     sx={{
-                                        minWidth: 0,
-                                        mr: open ? 3 : 'auto',
-                                        justifyContent: 'center',
+                                        minHeight: 48,
+                                        justifyContent: open ? 'initial' : 'center',
+                                        backgroundColor: pathName === item.href ? theme.palette.mode === "dark" ? grey[800] : grey[300] : undefined,
+                                        px: 2.5,
                                     }}
                                 >
-                                    <item.icon />
-                                </ListItemIcon>
 
-                                <ListItemText primary={item.title} sx={{ opacity: open ? 1 : 0 }} />
+                                    <ListItemIcon
+                                        sx={{
+                                            minWidth: 0,
+                                            mr: open ? 3 : 'auto',
+                                            justifyContent: 'center',
+                                        }}
+                                    >
+                                        <item.icon />
+                                    </ListItemIcon>
 
-                            </ListItemButton>
+                                    <ListItemText primary={item.title} sx={{ opacity: open ? 1 : 0 }} />
+
+                                </ListItemButton>
+                            </Tooltip>
                         </Link>
                     </ListItem>
                 ))}

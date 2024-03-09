@@ -4,11 +4,14 @@ import { data } from './data'
 import { Box, useTheme } from '@mui/material'
 import { customizedNivoTheme } from './theme'
 
-function Bar() {
+interface props {
+    isDashboard: boolean
+}
+function Bar({ isDashboard }: props) {
     const theme = useTheme();
 
     return (
-        <Box sx={{ height: "75dvh" }}>
+        <Box sx={{ height: isDashboard ? "290px" : "75dvh" }}>
             <ResponsiveBar
                 data={data}
                 theme={customizedNivoTheme(theme)}
@@ -68,7 +71,7 @@ function Bar() {
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: 0,
-                    legend: 'Year',
+                    legend: isDashboard ? null : 'Year',
                     legendPosition: 'middle',
                     legendOffset: 35,
                     truncateTickAt: 0
@@ -77,7 +80,7 @@ function Bar() {
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: 0,
-                    legend: 'Minimum wage/moth',
+                    legend: isDashboard ? null : 'Minimum wage/moth',
                     legendPosition: 'middle',
                     legendOffset: -50,
                     truncateTickAt: 0
