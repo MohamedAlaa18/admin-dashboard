@@ -8,7 +8,7 @@ function Section2() {
     const theme = useTheme();
 
     return (
-        <Stack direction={"row"} flexWrap={"wrap"} gap={1.5} mt={3}>
+        <Stack direction={"row"} flexWrap={"wrap"} gap={1.5} mt={2}>
             <Paper sx={{ maxWidth: 900, minWidth: "400px", flexGrow: 1 }}>
                 <Stack direction={"row"} flexWrap={"wrap"} alignItems={"center"} justifyContent={"space-between"}>
                     <Box>
@@ -57,13 +57,14 @@ function Section2() {
                                 display: "flex",
                                 justifyContent: "space-between",
                                 alignItems: "center",
+                                paddingInline: 1.2
                             }}
                         >
                             <Box p={1.2}>
-                                <Typography variant="body1">text</Typography>
-                                <Typography variant="body2">text</Typography>
+                                <Typography variant="body1">{transaction.txId}</Typography>
+                                <Typography variant="body2">{transaction.user}</Typography>
                             </Box>
-                            <Typography variant="body1"></Typography>
+                            <Typography variant="body1">{transaction.date}</Typography>
 
                             <Typography
                                 borderRadius={1.4}
@@ -71,8 +72,9 @@ function Section2() {
                                 bgcolor={theme.palette.error.main}
                                 color={theme.palette.getContrastText(theme.palette.error.main)}
                                 variant="body2"
+                                sx={{ display: "flex", alignItems: "center", justifyContent: "center", width: "60px" }}
                             >
-                                text
+                                ${transaction.cost}
                             </Typography>
                         </Paper>
                     ))

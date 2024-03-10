@@ -1,6 +1,5 @@
 "use client"
-import { DownloadOutlined } from "@mui/icons-material"
-import { Box, Button, Paper, Stack, Typography, useTheme } from "@mui/material"
+import { Box,Paper, Stack, Typography, useTheme } from "@mui/material"
 import EmailIcon from "@mui/icons-material/Email";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
@@ -53,17 +52,6 @@ function Cards() {
     ]
     return (
         <Box>
-            <Box sx={{ textAlign: "right", mb: 1.3 }}>
-                <Button
-                    sx={{ padding: "6px 8px", textTransform: "capitalize" }}
-                    variant="contained"
-                    color="primary"
-                >
-                    <DownloadOutlined />
-                    Download Reports
-                </Button>
-            </Box>
-
             <Stack direction={"row"} gap={1} flexWrap={"wrap"} justifyContent={{ xs: "center", sm: "space-between" }}>
                 {
                     cartData.map((card, index) => (
