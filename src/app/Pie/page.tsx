@@ -3,6 +3,7 @@ import { Box, useTheme } from '@mui/material';
 import { ResponsivePie } from '@nivo/pie'
 import { customizedNivoTheme } from 'app/Bar/theme';
 import { data } from './data';
+import Title from 'components/Title';
 
 interface props {
     isDashboard: boolean
@@ -12,6 +13,8 @@ function Pie({ isDashboard }: props) {
 
     return (
         <Box height={isDashboard ? "200px" : "75dvh"}>
+            {isDashboard ? null : <Title title={"Pie chart"} subtitle={"Simple Pie Chart"} isDashboard={false} />}
+
             <ResponsivePie
                 data={data}
                 theme={customizedNivoTheme(theme)}

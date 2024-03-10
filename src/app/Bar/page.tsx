@@ -3,6 +3,7 @@ import { ResponsiveBar } from '@nivo/bar'
 import { data } from './data'
 import { Box, useTheme } from '@mui/material'
 import { customizedNivoTheme } from './theme'
+import Title from 'components/Title'
 
 interface props {
     isDashboard: boolean
@@ -12,6 +13,8 @@ function Bar({ isDashboard }: props) {
 
     return (
         <Box sx={{ height: isDashboard ? "290px" : "75dvh" }}>
+            {isDashboard ? null : <Title title={"Bar chart"} subtitle={"The minimum wage in Germany, France and Spain (EUR/month)"} isDashboard={false} />}
+
             <ResponsiveBar
                 data={data}
                 theme={customizedNivoTheme(theme)}

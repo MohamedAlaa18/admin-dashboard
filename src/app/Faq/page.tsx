@@ -6,10 +6,12 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Stack } from '@mui/material';
 import { accordionData } from './data';
+import Title from 'components/Title';
 
 function Faq() {
     return (
         <Stack direction={"column"} gap={2}>
+            <Title title={"FAQ"} subtitle={"Frequently Asked Questions Page"} isDashboard={false} />
             {accordionData.map(({ panel, heading, details, summary }, index) => (
                 <Accordion key={index} defaultExpanded={index == 0} >
                     <AccordionSummary

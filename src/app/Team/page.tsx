@@ -3,6 +3,7 @@ import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid"
 import { Box, Typography, useTheme } from "@mui/material"
 import { columns, rows } from "./data";
 import { AdminPanelSettingsOutlined, LockOpenOutlined, SecurityOutlined } from "@mui/icons-material";
+import Title from "components/Title";
 
 function Team() {
     const theme = useTheme();
@@ -26,9 +27,10 @@ function Team() {
         return col;
     });
     return (
-        <div style={{ height: 600, width: '98%', marginInline: "auto" }}>
+        <Box sx={{ height: 600, width: '98%', marginInline: "auto" }}>
+            <Title title={"Team"} subtitle={"Manning the team members"} isDashboard={false} />
             <DataGrid rows={rows} columns={customColumns} />
-        </div>
+        </Box>
     )
 }
 

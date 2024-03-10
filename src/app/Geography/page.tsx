@@ -4,6 +4,7 @@ import { ResponsiveChoropleth, ChoroplethProps } from '@nivo/geo';
 import { data } from './data';
 import { customizedNivoTheme } from 'app/Bar/theme';
 import { geo } from './counties';
+import Title from 'components/Title';
 
 interface ExtendedChoroplethProps extends ChoroplethProps {
     layers: string[];
@@ -25,7 +26,7 @@ function Geography({ isDashboard }: props) {
         unknownColor: "#666666",
         label: "properties.name",
         match: "id",
-        layers: [isDashboard ? 'graticule':'legends', 'features' ],
+        layers: [isDashboard ? 'graticule' : 'legends', 'features'],
         valueFormat: ".2s",
         projectionTranslation: [0.5, 0.5],
         projectionRotation: [0, 0, 0],
@@ -71,8 +72,12 @@ function Geography({ isDashboard }: props) {
     };
 
     return (
-        <Box height={isDashboard ? "350px" : "75dvh"} sx={{ border: isDashboard ? undefined : `1px solid ${theme.palette.text.primary}`, borderRadius: 1 }}>
-            <ResponsiveChoropleth {...(choroplethProps as ChoroplethProps)} />
+        <Box>
+            {isDashboard ? null : <Title title={"Geography"} subtitle={"Simple Geography Chart"} isDashboard={false} />}
+
+            <Box height={isDashboard ? "350px" : "75dvh"} sx={{ border: isDashboard ? undefined : `1px solid ${theme.palette.text.primary}`, borderRadius: 1 }}>
+                <ResponsiveChoropleth {...(choroplethProps as ChoroplethProps)} />
+            </Box>
         </Box>
     );
 }

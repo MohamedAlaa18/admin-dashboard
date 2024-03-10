@@ -1,5 +1,6 @@
 'use client'
 import { Alert, Box, Button, MenuItem, Snackbar, Stack, TextField } from "@mui/material"
+import Title from "components/Title";
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
@@ -62,6 +63,7 @@ function Form() {
             }}
             onSubmit={handleSubmit(onSubmit)}
         >
+            <Title title={"Create user"} subtitle={"Create a New User Profile"} isDashboard={false} />
             <Stack direction={'row'} gap={2}>
                 <TextField
                     error={Boolean(errors.firstName)}

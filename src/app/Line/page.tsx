@@ -3,6 +3,7 @@ import { Box, useTheme } from '@mui/material'
 import { ResponsiveLine } from '@nivo/line'
 import { customizedNivoTheme } from 'app/Bar/theme'
 import { data } from './data';
+import Title from 'components/Title';
 
 type props = {
     isDashboard: boolean
@@ -11,6 +12,8 @@ function Line({ isDashboard }: props) {
     const theme = useTheme();
     return (
         <Box height={isDashboard ? "280px" : "75dvh"}>
+            {isDashboard ? null : <Title title={"Line chart"} subtitle={"Simple Line Chart"} isDashboard={false} />}
+
             <ResponsiveLine
                 data={data}
                 theme={customizedNivoTheme(theme)}
